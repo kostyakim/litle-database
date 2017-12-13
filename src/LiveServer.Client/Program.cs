@@ -8,7 +8,7 @@ namespace LiveServer.Client
 {
     internal class Program
     {
-        private const int Items = 10_000;
+        private const int Items = 100;
         private static readonly Random Random = new Random();
 
         private static void Main()
