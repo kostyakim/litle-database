@@ -1,30 +1,44 @@
 ﻿using System;
+using System.IO;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
 using LitleDatabase.Core.Client;
+using LiveServer.Client.Configuration;
+using Microsoft.Extensions.Configuration;
 
 namespace LiveServer.Client
 {
     internal class Program
     {
-        private const int Items = 100;
+        private const int Items = 1_000_000;
         private static readonly Random Random = new Random();
 
         private static void Main()
         {
+            var builder = new ConfigurationBuilder()
+                .SetBasePath(Directory.GetCurrentDirectory())
+                .AddJsonFile("appsettings.json", true, true);
+
+            IConfigurationRoot configuration = builder.Build();
+
+            var settings = new ServerConviguration();
+            configuration.GetSection("Server").Bind(settings);
+
+            Console.WriteLine(configuration.GetConnectionString("Storage"));
+
             var addTasks = Enumerable.Range(0, 16)
-                .Select(x => GenerateAddTask())
+                .Select(x => GenerateAddTask(settings.Address, settings.Port))
                 .ToArray();
             Task.WaitAll(addTasks);
         }
 
-        private static Task GenerateAddTask()
+        private static Task GenerateAddTask(string address, int port)
         {
             Thread.Sleep(Random.Next(10000));
             while(true)
             {
-                using (var client = new DatabaseClient("127.0.0.1", 8080))
+                using (var client = new DatabaseClient(address, port))
                 {
                     var action = CreateAction(client);
                     var key = Random.Next(0, Items);
@@ -37,7 +51,7 @@ namespace LiveServer.Client
         {
             var randomItem = Random.Next(0, 110);
 
-            if (randomItem < 75)
+            if (randomItem < 80)
                 return i => client.Post(i.ToString(), i.ToString());
 
             if (randomItem < 95)

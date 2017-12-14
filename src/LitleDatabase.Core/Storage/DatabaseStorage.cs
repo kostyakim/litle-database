@@ -19,7 +19,7 @@ namespace LitleDatabase.Core.Storage
                 {
                     Storage.Remove(key);
                     //File.AppendAllText("log/logs.txt", Environment.NewLine + $"{DateTime.UtcNow:HH:mm:ss} record with key: {key} Delete  {Storage.Count} {Name}");
-                    Console.WriteLine($"record with key: {key} deleted");
+                    //Console.WriteLine($"record with key: {key} deleted");
                 }
             }
             return Task.CompletedTask;
@@ -39,14 +39,14 @@ namespace LitleDatabase.Core.Storage
                 }
             }
 
-            Console.WriteLine($"record with key: {key} read, value: {value}");
+            //Console.WriteLine($"record with key: {key} read, value: {value}");
             //File.AppendAllText("log/logs.txt", Environment.NewLine + $"{DateTime.UtcNow:HH:mm:ss} record with key: {key} Read  {Storage.Count} {Name}");
             return Task.FromResult(value);
         }
 
         public Task Write(string key, string value)
         {
-            Console.WriteLine($"record with key: {key} updated, value: {value}");
+            //Console.WriteLine($"record with key: {key} updated, value: {value}");
             //File.AppendAllText("log/logs.txt", Environment.NewLine + $"{DateTime.UtcNow:HH:mm:ss} record with key: {key} Write  {Storage.Count} {Name}");
 
             if (Storage.ContainsKey(key))
