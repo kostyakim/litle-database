@@ -14,6 +14,7 @@
 
   <ItemGroup>
     <ProjectReference Include="..\LitleDatabase.Core\LitleDatabase.Core.csproj" />
+    <ProjectReference Include="..\LitleDatabase\LitleDatabase.csproj" />
   </ItemGroup>
 
   <ItemGroup>

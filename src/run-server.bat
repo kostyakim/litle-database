@@ -1,2 +1,2 @@
-cd .\LitleServer
-start "server" dotnet run --config LitleServer.csproj 
+cd .\LitleDatabase
+start "server" dotnet run --config LitleDatabase.csproj 

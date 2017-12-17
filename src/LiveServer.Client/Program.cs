@@ -3,7 +3,7 @@ using System.IO;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
-using LitleDatabase.Core.Client;
+using LitleDatabase.Client;
 using LiveServer.Client.Configuration;
 using Microsoft.Extensions.Configuration;
 

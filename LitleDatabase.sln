@@ -3,7 +3,7 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 15
 VisualStudioVersion = 15.0.27130.0
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "LitleServer", "src\LitleServer\LitleServer.csproj", "{0A0DBCA1-799B-4FB4-AB36-0571463192FC}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "LitleDatabase", "src\LitleDatabase\LitleDatabase.csproj", "{0A0DBCA1-799B-4FB4-AB36-0571463192FC}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "LitleDatabase.Core", "src\LitleDatabase.Core\LitleDatabase.Core.csproj", "{1F0EEB8A-5ED1-4BCA-8980-9D94C773E054}"
 EndProject
@@ -11,7 +11,7 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{73AEF74C-76B
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "test", "test", "{41FE1003-626E-44F4-B95D-A199E6A815BE}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LiveServer.Client", "src\LiveServer.Client\LiveServer.Client.csproj", "{740BC92F-1232-4B2C-9971-F84952342030}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "LiveServer.Client", "src\LiveServer.Client\LiveServer.Client.csproj", "{740BC92F-1232-4B2C-9971-F84952342030}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

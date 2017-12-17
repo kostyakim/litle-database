@@ -1,5 +1,5 @@
-cd .\LitleServer
-start "server" dotnet run --config LitleServer.csproj 
+cd .\LitleDatabase
+start "server" dotnet run --config LitleDatabase.csproj 
 
 cd ..\LiveServer.Client
 start "client 1" dotnet run --config LiveServer.Client.csproj
