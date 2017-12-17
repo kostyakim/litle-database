@@ -11,10 +11,9 @@ namespace LitleDatabase
         private readonly IServerClient _serverClient;
         private readonly TcpListener _tcpListener;
 
-        public LitleServerThread(int port, IServerClient client)
+        public LitleServerThread(IPAddress address, int port, IServerClient client)
         {
-            var localAddr = IPAddress.Parse("127.0.0.1");
-            _tcpListener = new TcpListener(localAddr, port);
+            _tcpListener = new TcpListener(address, port);
             _serverClient = client;
         }
 
