@@ -1,7 +1,6 @@
 ﻿using System;
 using System.IO;
 using System.Linq;
-using System.Net;
 using System.Threading;
 using System.Threading.Tasks;
 using LitleDatabase.Client;
@@ -21,7 +20,7 @@ namespace LiveServer.Client
                 .SetBasePath(Directory.GetCurrentDirectory())
                 .AddJsonFile("appsettings.json", true, true);
 
-            IConfigurationRoot configuration = builder.Build();
+            var configuration = builder.Build();
 
             var settings = new ServerConviguration();
             configuration.GetSection("Server").Bind(settings);
@@ -53,7 +52,7 @@ namespace LiveServer.Client
             var randomItem = Random.Next(0, 110);
 
             if (randomItem < 80)
-                return i => client.Post(i.ToString(), i.ToString());
+                return i => client.Post(i.ToString(), GetTitleById(i));
 
             if (randomItem < 95)
                 return i => client.Delete(i.ToString());
