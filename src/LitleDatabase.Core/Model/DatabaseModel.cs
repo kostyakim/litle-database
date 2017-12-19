@@ -4,7 +4,7 @@ using System.Runtime.Serialization;
 namespace LitleDatabase.Core.Model
 {
     [Serializable]
-    public class DatabaseModel : IDatabaseModel, ISerializable
+    public class DatabaseModel : IDatabaseModel
     {
         public DatabaseModel()
         {

@@ -14,6 +14,7 @@ namespace LitleDatabase.Core
             using (var ms = new MemoryStream())
             {
                 bf.Serialize(ms, obj);
+                ms.Flush();
                 return ms.ToArray();
             }
         }
@@ -26,6 +27,7 @@ namespace LitleDatabase.Core
             var bf = new BinaryFormatter();
             using (var ms = new MemoryStream(data))
             {
+                ms.Position = 0;
                 var obj = bf.Deserialize(ms);
                 return (T) obj;
             }

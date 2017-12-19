@@ -18,6 +18,7 @@ namespace LitleDatabase.Server
         public async Task<byte[]> Call(byte[] byteArray)
         {
             var obj = byteArray.ToObject<IDatabaseModel>();
+            Console.WriteLine(obj.Key);
             try
             {
                 switch (obj.Action)

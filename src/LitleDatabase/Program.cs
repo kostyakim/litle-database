@@ -16,11 +16,10 @@ namespace LitleDatabase
                 .SetBasePath(Directory.GetCurrentDirectory())
                 .AddJsonFile("appsettings.json", true, true);
 
-            IConfigurationRoot configuration = builder.Build();
+            var configuration = builder.Build();
 
             var settings = new ServerConviguration();
             configuration.GetSection("Server").Bind(settings);
-
 
             // Определим нужное максимальное количество потоков
             int maxThreadsCount = Environment.ProcessorCount * 8;

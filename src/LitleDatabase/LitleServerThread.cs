@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.Net;
 using System.Net.Sockets;
 using System.Threading;
@@ -37,10 +38,17 @@ namespace LitleDatabase
             var client = (TcpClient)stateInfo;
             // получаем сетевой поток для чтения и записи
             var stream = client.GetStream();
-            var buffer = new byte[client.ReceiveBufferSize];
-            stream.Read(buffer, 0, client.ReceiveBufferSize);
+            var data = new List<byte>();
+            var bytes = 0;
+            do
+            {
+                var buffer = new byte[client.ReceiveBufferSize];
+                stream.Read(buffer, bytes, client.ReceiveBufferSize);
+                data.AddRange(buffer);
+            }
+            while (stream.DataAvailable);
 
-            var result = _serverClient.Call(buffer).GetAwaiter().GetResult();
+            var result = _serverClient.Call(data.ToArray()).GetAwaiter().GetResult();
             // отправка сообщения
             stream.Write(result, 0, result.Length);
             // закрываем подключение

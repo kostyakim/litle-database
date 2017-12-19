@@ -1,6 +1,7 @@
 ﻿using System;
 using System.IO;
 using System.Linq;
+using System.Net;
 using System.Threading;
 using System.Threading.Tasks;
 using LitleDatabase.Client;
@@ -58,6 +59,156 @@ namespace LiveServer.Client
                 return i => client.Delete(i.ToString());
 
             return i => client.Get(i.ToString());
+        }
+
+        private static string GetTitleById(int id)
+        {
+            return Random.Next(0, id).ToString() + Random.Next(0, id).ToString() + Random.Next(0, id).ToString() +
+                   Random.Next(0, id).ToString() + Random.Next(0, id).ToString() + Random.Next(0, id).ToString() +
+                   Random.Next(0, id).ToString() + Random.Next(0, id).ToString() + Random.Next(0, id).ToString() +
+                   Random.Next(0, id).ToString() + Random.Next(0, id).ToString() + Random.Next(0, id).ToString() +
+                   Random.Next(0, id).ToString() + Random.Next(0, id).ToString() + Random.Next(0, id).ToString() +
+                   Random.Next(0, id).ToString() + Random.Next(0, id).ToString() + Random.Next(0, id).ToString() +
+                   Random.Next(0, id).ToString() + Random.Next(0, id).ToString() + Random.Next(0, id).ToString() +
+                   Random.Next(0, id).ToString() + Random.Next(0, id).ToString() + Random.Next(0, id).ToString() +
+                   Random.Next(0, id).ToString() + Random.Next(0, id).ToString() + Random.Next(0, id).ToString() +
+                   Random.Next(0, id).ToString() + Random.Next(0, id).ToString() + Random.Next(0, id).ToString() +
+                   Random.Next(0, id).ToString() + Random.Next(0, id).ToString() + Random.Next(0, id).ToString() +
+                   Random.Next(0, id).ToString() + Random.Next(0, id).ToString() + Random.Next(0, id).ToString() +
+                   Random.Next(0, id).ToString() + Random.Next(0, id).ToString() + Random.Next(0, id).ToString() +
+                   Random.Next(0, id).ToString() + Random.Next(0, id).ToString() + Random.Next(0, id).ToString() +
+                   Random.Next(0, id).ToString() + Random.Next(0, id).ToString() + Random.Next(0, id).ToString() +
+                   Random.Next(0, id).ToString() + Random.Next(0, id).ToString() + Random.Next(0, id).ToString() +
+                   Random.Next(0, id).ToString() + Random.Next(0, id).ToString() + Random.Next(0, id).ToString() +
+                   Random.Next(0, id).ToString() + Random.Next(0, id).ToString() + Random.Next(0, id).ToString() +
+                   Random.Next(0, id).ToString() + Random.Next(0, id).ToString() + Random.Next(0, id).ToString() +
+                   Random.Next(0, id).ToString() + Random.Next(0, id).ToString() + Random.Next(0, id).ToString() +
+                   Random.Next(0, id).ToString() + Random.Next(0, id).ToString() + Random.Next(0, id).ToString() +
+                   Random.Next(0, id).ToString() + Random.Next(0, id).ToString() + Random.Next(0, id).ToString() +
+                   Random.Next(0, id).ToString() + Random.Next(0, id).ToString() + Random.Next(0, id).ToString() +
+                   Random.Next(0, id).ToString() + Random.Next(0, id).ToString() + Random.Next(0, id).ToString() +
+                   Random.Next(0, id).ToString() + Random.Next(0, id).ToString() + Random.Next(0, id).ToString() +
+                   Random.Next(0, id).ToString() + Random.Next(0, id).ToString() + Random.Next(0, id).ToString() +
+                   Random.Next(0, id).ToString() + Random.Next(0, id).ToString() + Random.Next(0, id).ToString() +
+                   Random.Next(0, id).ToString() + Random.Next(0, id).ToString() + Random.Next(0, id).ToString() +
+                   Random.Next(0, id).ToString() + Random.Next(0, id).ToString() + Random.Next(0, id).ToString() +
+                   Random.Next(0, id).ToString() + Random.Next(0, id).ToString() + Random.Next(0, id).ToString() +
+                   Random.Next(0, id).ToString() + Random.Next(0, id).ToString() + Random.Next(0, id).ToString() +
+                   Random.Next(0, id).ToString() + Random.Next(0, id).ToString() + Random.Next(0, id).ToString() +
+                   Random.Next(0, id).ToString() + Random.Next(0, id).ToString() + Random.Next(0, id).ToString() +
+                   Random.Next(0, id).ToString() + Random.Next(0, id).ToString() + Random.Next(0, id).ToString() +
+                   Random.Next(0, id).ToString() + Random.Next(0, id).ToString() + Random.Next(0, id).ToString() +
+                   Random.Next(0, id).ToString() + Random.Next(0, id).ToString() + Random.Next(0, id).ToString() +
+                   Random.Next(0, id).ToString() + Random.Next(0, id).ToString() + Random.Next(0, id).ToString() +
+                   Random.Next(0, id).ToString() + Random.Next(0, id).ToString() + Random.Next(0, id).ToString() +
+                   Random.Next(0, id).ToString() + Random.Next(0, id).ToString() + Random.Next(0, id).ToString() +
+                   Random.Next(0, id).ToString() + Random.Next(0, id).ToString() + Random.Next(0, id).ToString() +
+                   Random.Next(0, id).ToString() + Random.Next(0, id).ToString() + Random.Next(0, id).ToString() +
+                   Random.Next(0, id).ToString() + Random.Next(0, id).ToString() + Random.Next(0, id).ToString() +
+                   Random.Next(0, id).ToString() + Random.Next(0, id).ToString() + Random.Next(0, id).ToString() +
+                   Random.Next(0, id).ToString() + Random.Next(0, id).ToString() + Random.Next(0, id).ToString() +
+                   Random.Next(0, id).ToString() + Random.Next(0, id).ToString() + Random.Next(0, id).ToString() +
+                   Random.Next(0, id).ToString() + Random.Next(0, id).ToString() + Random.Next(0, id).ToString() +
+                   Random.Next(0, id).ToString() + Random.Next(0, id).ToString() + Random.Next(0, id).ToString() +
+                   Random.Next(0, id).ToString() + Random.Next(0, id).ToString() + Random.Next(0, id).ToString() +
+                   Random.Next(0, id).ToString() + Random.Next(0, id).ToString() + Random.Next(0, id).ToString() +
+                   Random.Next(0, id).ToString() + Random.Next(0, id).ToString() + Random.Next(0, id).ToString() +
+                   Random.Next(0, id).ToString() + Random.Next(0, id).ToString() + Random.Next(0, id).ToString() +
+                   Random.Next(0, id).ToString() + Random.Next(0, id).ToString() + Random.Next(0, id).ToString() +
+                   Random.Next(0, id).ToString() + Random.Next(0, id).ToString() + Random.Next(0, id).ToString() +
+                   Random.Next(0, id).ToString() + Random.Next(0, id).ToString() + Random.Next(0, id).ToString() +
+                   Random.Next(0, id).ToString() + Random.Next(0, id).ToString() + Random.Next(0, id).ToString() +
+                   Random.Next(0, id).ToString() + Random.Next(0, id).ToString() + Random.Next(0, id).ToString() +
+                   Random.Next(0, id).ToString() + Random.Next(0, id).ToString() + Random.Next(0, id).ToString() +
+                   Random.Next(0, id).ToString() + Random.Next(0, id).ToString() + Random.Next(0, id).ToString() +
+                   Random.Next(0, id).ToString() + Random.Next(0, id).ToString() + Random.Next(0, id).ToString() +
+                   Random.Next(0, id).ToString() + Random.Next(0, id).ToString() + Random.Next(0, id).ToString() +
+                   Random.Next(0, id).ToString() + Random.Next(0, id).ToString() + Random.Next(0, id).ToString() +
+                   Random.Next(0, id).ToString() + Random.Next(0, id).ToString() + Random.Next(0, id).ToString() +
+                   Random.Next(0, id).ToString() + Random.Next(0, id).ToString() + Random.Next(0, id).ToString() +
+                   Random.Next(0, id).ToString() + Random.Next(0, id).ToString() + Random.Next(0, id).ToString() +
+                   Random.Next(0, id).ToString() + Random.Next(0, id).ToString() + Random.Next(0, id).ToString() +
+                   Random.Next(0, id).ToString() + Random.Next(0, id).ToString() + Random.Next(0, id).ToString() +
+                   Random.Next(0, id).ToString() + Random.Next(0, id).ToString() + Random.Next(0, id).ToString() +
+                   Random.Next(0, id).ToString() + Random.Next(0, id).ToString() + Random.Next(0, id).ToString() +
+                   Random.Next(0, id).ToString() + Random.Next(0, id).ToString() + Random.Next(0, id).ToString() +
+                   Random.Next(0, id).ToString() + Random.Next(0, id).ToString() + Random.Next(0, id).ToString() +
+                   Random.Next(0, id).ToString() + Random.Next(0, id).ToString() + Random.Next(0, id).ToString() +
+                   Random.Next(0, id).ToString() + Random.Next(0, id).ToString() + Random.Next(0, id).ToString() +
+                   Random.Next(0, id).ToString() + Random.Next(0, id).ToString() + Random.Next(0, id).ToString() +
+                   Random.Next(0, id).ToString() + Random.Next(0, id).ToString() + Random.Next(0, id).ToString() +
+                   Random.Next(0, id).ToString() + Random.Next(0, id).ToString() + Random.Next(0, id).ToString() +
+                   Random.Next(0, id).ToString() + Random.Next(0, id).ToString() + Random.Next(0, id).ToString() +
+                   Random.Next(0, id).ToString() + Random.Next(0, id).ToString() + Random.Next(0, id).ToString() +
+                   Random.Next(0, id).ToString() + Random.Next(0, id).ToString() + Random.Next(0, id).ToString() +
+                   Random.Next(0, id).ToString() + Random.Next(0, id).ToString() + Random.Next(0, id).ToString() +
+                   Random.Next(0, id).ToString() + Random.Next(0, id).ToString() + Random.Next(0, id).ToString() +
+                   Random.Next(0, id).ToString() + Random.Next(0, id).ToString() + Random.Next(0, id).ToString() +
+                   Random.Next(0, id).ToString() + Random.Next(0, id).ToString() + Random.Next(0, id).ToString() +
+                   Random.Next(0, id).ToString() + Random.Next(0, id).ToString() + Random.Next(0, id).ToString() +
+                   Random.Next(0, id).ToString() + Random.Next(0, id).ToString() + Random.Next(0, id).ToString() +
+                   Random.Next(0, id).ToString() + Random.Next(0, id).ToString() + Random.Next(0, id).ToString() +
+                   Random.Next(0, id).ToString() + Random.Next(0, id).ToString() + Random.Next(0, id).ToString() +
+                   Random.Next(0, id).ToString() + Random.Next(0, id).ToString() + Random.Next(0, id).ToString() +
+                   Random.Next(0, id).ToString() + Random.Next(0, id).ToString() + Random.Next(0, id).ToString() +
+                   Random.Next(0, id).ToString() + Random.Next(0, id).ToString() + Random.Next(0, id).ToString() +
+                   Random.Next(0, id).ToString() + Random.Next(0, id).ToString() + Random.Next(0, id).ToString() +
+                   Random.Next(0, id).ToString() + Random.Next(0, id).ToString() + Random.Next(0, id).ToString() +
+                   Random.Next(0, id).ToString() + Random.Next(0, id).ToString() + Random.Next(0, id).ToString() +
+                   Random.Next(0, id).ToString() + Random.Next(0, id).ToString() + Random.Next(0, id).ToString() +
+                   Random.Next(0, id).ToString() + Random.Next(0, id).ToString() + Random.Next(0, id).ToString() +
+                   Random.Next(0, id).ToString() + Random.Next(0, id).ToString() + Random.Next(0, id).ToString() +
+                   Random.Next(0, id).ToString() + Random.Next(0, id).ToString() + Random.Next(0, id).ToString() +
+                   Random.Next(0, id).ToString() + Random.Next(0, id).ToString() + Random.Next(0, id).ToString() +
+                   Random.Next(0, id).ToString() + Random.Next(0, id).ToString() + Random.Next(0, id).ToString() +
+                   Random.Next(0, id).ToString() + Random.Next(0, id).ToString() + Random.Next(0, id).ToString() +
+                   Random.Next(0, id).ToString() + Random.Next(0, id).ToString() + Random.Next(0, id).ToString() +
+                   Random.Next(0, id).ToString() + Random.Next(0, id).ToString() + Random.Next(0, id).ToString() +
+                   Random.Next(0, id).ToString() + Random.Next(0, id).ToString() + Random.Next(0, id).ToString() +
+                   Random.Next(0, id).ToString() + Random.Next(0, id).ToString() + Random.Next(0, id).ToString() +
+                   Random.Next(0, id).ToString() + Random.Next(0, id).ToString() + Random.Next(0, id).ToString() +
+                   Random.Next(0, id).ToString() + Random.Next(0, id).ToString() + Random.Next(0, id).ToString() +
+                   Random.Next(0, id).ToString() + Random.Next(0, id).ToString() + Random.Next(0, id).ToString() +
+                   Random.Next(0, id).ToString() + Random.Next(0, id).ToString() + Random.Next(0, id).ToString() +
+                   Random.Next(0, id).ToString() + Random.Next(0, id).ToString() + Random.Next(0, id).ToString() +
+                   Random.Next(0, id).ToString() + Random.Next(0, id).ToString() + Random.Next(0, id).ToString() +
+                   Random.Next(0, id).ToString() + Random.Next(0, id).ToString() + Random.Next(0, id).ToString() +
+                   Random.Next(0, id).ToString() + Random.Next(0, id).ToString() + Random.Next(0, id).ToString() +
+                   Random.Next(0, id).ToString() + Random.Next(0, id).ToString() + Random.Next(0, id).ToString() +
+                   Random.Next(0, id).ToString() + Random.Next(0, id).ToString() + Random.Next(0, id).ToString() +
+                   Random.Next(0, id).ToString() + Random.Next(0, id).ToString() + Random.Next(0, id).ToString() +
+                   Random.Next(0, id).ToString() + Random.Next(0, id).ToString() + Random.Next(0, id).ToString() +
+                   Random.Next(0, id).ToString() + Random.Next(0, id).ToString() + Random.Next(0, id).ToString() +
+                   Random.Next(0, id).ToString() + Random.Next(0, id).ToString() + Random.Next(0, id).ToString() +
+                   Random.Next(0, id).ToString() + Random.Next(0, id).ToString() + Random.Next(0, id).ToString() +
+                   Random.Next(0, id).ToString() + Random.Next(0, id).ToString() + Random.Next(0, id).ToString() +
+                   Random.Next(0, id).ToString() + Random.Next(0, id).ToString() + Random.Next(0, id).ToString() +
+                   Random.Next(0, id).ToString() + Random.Next(0, id).ToString() + Random.Next(0, id).ToString() +
+                   Random.Next(0, id).ToString() + Random.Next(0, id).ToString() + Random.Next(0, id).ToString() +
+                   Random.Next(0, id).ToString() + Random.Next(0, id).ToString() + Random.Next(0, id).ToString() +
+                   Random.Next(0, id).ToString() + Random.Next(0, id).ToString() + Random.Next(0, id).ToString() +
+                   Random.Next(0, id).ToString() + Random.Next(0, id).ToString() + Random.Next(0, id).ToString() +
+                   Random.Next(0, id).ToString() + Random.Next(0, id).ToString() + Random.Next(0, id).ToString() +
+                   Random.Next(0, id).ToString() + Random.Next(0, id).ToString() + Random.Next(0, id).ToString() +
+                   Random.Next(0, id).ToString() + Random.Next(0, id).ToString() + Random.Next(0, id).ToString() +
+                   Random.Next(0, id).ToString() + Random.Next(0, id).ToString() + Random.Next(0, id).ToString() +
+                   Random.Next(0, id).ToString() + Random.Next(0, id).ToString() + Random.Next(0, id).ToString() +
+                   Random.Next(0, id).ToString() + Random.Next(0, id).ToString() + Random.Next(0, id).ToString() +
+                   Random.Next(0, id).ToString() + Random.Next(0, id).ToString() + Random.Next(0, id).ToString() +
+                   Random.Next(0, id).ToString() + Random.Next(0, id).ToString() + Random.Next(0, id).ToString() +
+                   Random.Next(0, id).ToString() + Random.Next(0, id).ToString() + Random.Next(0, id).ToString() +
+                   Random.Next(0, id).ToString() + Random.Next(0, id).ToString() + Random.Next(0, id).ToString() +
+                   Random.Next(0, id).ToString() + Random.Next(0, id).ToString() + Random.Next(0, id).ToString() +
+                   Random.Next(0, id).ToString() + Random.Next(0, id).ToString() + Random.Next(0, id).ToString() +
+                   Random.Next(0, id).ToString() + Random.Next(0, id).ToString() + Random.Next(0, id).ToString() +
+                   Random.Next(0, id).ToString() + Random.Next(0, id).ToString() + Random.Next(0, id).ToString() +
+                   Random.Next(0, id).ToString() + Random.Next(0, id).ToString() + Random.Next(0, id).ToString() +
+                   Random.Next(0, id).ToString() + Random.Next(0, id).ToString() + Random.Next(0, id).ToString() +
+                   Random.Next(0, id).ToString() + Random.Next(0, id).ToString() + Random.Next(0, id).ToString() +
+                   Random.Next(0, id).ToString() + Random.Next(0, id).ToString() + Random.Next(0, id).ToString() +
+                   Random.Next(0, id).ToString() + Random.Next(0, id).ToString() + Random.Next(0, id).ToString() +
+                   Random.Next(0, id).ToString() + Random.Next(0, id).ToString() + Random.Next(0, id).ToString() +
+                   Random.Next(0, id).ToString();
         }
     }
 }
